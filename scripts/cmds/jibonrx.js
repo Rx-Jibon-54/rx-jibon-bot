@@ -1,4 +1,4 @@
-? Cmd install jibonrx.js module.exports = {
+module.exports = {
   config: {
     name: "jibonrx",
     version: "1.0",
