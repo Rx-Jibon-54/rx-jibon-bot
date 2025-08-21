@@ -1,4 +1,4 @@
-?Cmd install jibon.js module.exports = {
+module.exports = {
   config: {
     name: "jibon",
     version: "1.0",
