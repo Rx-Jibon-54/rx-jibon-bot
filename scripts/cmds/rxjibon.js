@@ -1,4 +1,4 @@
-? Cmd install rxjibon.js module.exports = {
+module.exports = {
   config: {
     name: "rxjibon",
     version: "1.0",
