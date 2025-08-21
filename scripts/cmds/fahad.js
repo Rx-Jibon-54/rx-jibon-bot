@@ -1,4 +1,4 @@
-? Cmd install Fahad.js module.exports = {
+module.exports = {
   config: {
     name: "fahad",
     version: "1.0",
