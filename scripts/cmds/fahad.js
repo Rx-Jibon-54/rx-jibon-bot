@@ -17,7 +17,7 @@ module.exports = {
       const video = "https://files.catbox.moe/f63r67.mp4";
 
       return message.reply({
-        body: "𝐅𝐀𝐇𝐀𝐃 ✨ 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 🎬",
+        body: "𝐉𝐈𝐁𝐎𝐍 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 ✨ 𝐓𝐇𝐈𝐒 𝐐𝐔𝐀𝐋𝐈𝐓𝐘 🎬",
         attachment: await global.utils.getStreamFromURL(video)
       });
     }
