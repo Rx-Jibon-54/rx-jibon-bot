@@ -17,4 +17,7 @@ module.exports = {
         });
       } catch (error) {
         console.error("Error sending audio:", error);
-      }module
+      }
+    }
+  }
+};
