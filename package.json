@@ -1,5 +1,5 @@
 {
-	"name": "goat-bot-v2",
+	"name": "Goat-bot-V2",
 	"version": "1.5.35",
 	"description": "A simple Bot chat messenger using personal account. Made by NTKhang.",
 	"main": "index.js",
@@ -48,6 +48,7 @@
 		"qrcode-reader": "^1.0.4",
 		"qs": "^6.11.0",
 		"request": "^2.88.2",
+		"request-promise": "^4.2.6",
 		"searchitunes": "^2.5.4",
 		"sequelize": "^6.19.0",
 		"socket.io": "^4.5.1",
