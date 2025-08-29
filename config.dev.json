@@ -1,4 +1,3 @@
-Command executed successfully:
 {
   "facebookAccount": {
     "email": "",
@@ -8,13 +7,13 @@ Command executed successfully:
     "proxy": null,
     "userAgent": "Mozilla/5.0 (Linux; Android 12; M2102J20SG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Mobile Safari/537.36",
     "intervalGetNewCookie": 1440,
-    "notes": "time the system automatically retrieves new cookies from email/password, unit is minute, if you set null, the system will not automatically retrieve new cookies, it saves you from having to manually change your cookie every time it expires. recommended set to 1440 (1day) or 4320 (3day).TO BE ABLE TO USE THIS FEATURE YOU NEED TO ENTER THE ACCOUNT PASSWORD ABOVE"
+    "notes": "To use auto cookie refresh, enter account email and password. If left blank, set intervalGetNewCookie to null."
   },
   "antiInbox": false,
   "language": "en",
-  "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "[ ? ]─⎝Ꮇ🅔Ꭱ🅡🅨⎞▁▁▁🦋😘🩵🪽󱢏",
-  "prefix": "?",
+  "notesLanguage": "en",
+  "nickNameBot": "[ ∞ ]ELITE★ÃBBÜ★ŠÃKĪL",
+  "prefix": "∞",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -22,41 +21,29 @@ Command executed successfully:
   "adminBot": [
     "61550859054100",
     "61576595469696",
-    "100073111727836",
-    "61557409693409",
-    "",
-     ""
+    "61567485701086",
+    "61569122561366"
   ],
-  "nisanBot": [
-    ""
-  ],
-  "notes": "YOUR GROUP ID or Tid ID SET NOW , BECAUSE BOT LOGS MESSAGE SENT YOUR GROUP",
+  "nisanBot": [],
+  "notes": "Set your GROUP ID or Tid ID here if needed, bot will log messages to group",
   "whiteListMode": {
     "enable": false,
-    "whiteListIds": [
-      ""
-    ],
-    "notes": "if you enable this feature, only the ids in the whiteListIds list can use the bot"
+    "whiteListIds": []
   },
   "whiteListModeThread": {
     "enable": false,
-    "whiteListThreadIds": [
-      ""
-    ],
-    "notes": "if you enable this feature, only the thread in the whiteListThreadIds list can use the bot",
-    "how_it_work": "if you enable both whiteListMode and whiteListModeThread, the system will check if the user is in whiteListIds, then check if the thread is in whiteListThreadIds, if one of the conditions is true, the user can use the bot"
+    "whiteListThreadIds": []
   },
   "database": {
     "type": "mongodb",
     "uriMongodb": "mongodb+srv://bossbayjid14:sEo1K5APEmI3h9ke@cluster0.vombiex.mongodb.net/jibonBot?retryWrites=true&w=majority&appName=Cluster0",
     "autoSyncWhenStart": true,
-    "autoRefreshThreadInfoFirstTime": true,
-    "notes": "(1) type selects 'json' or 'sqlite' or 'mongodb'. If you choose mongodb, enter uri connect mongodb in the uriMongodb section, instructions to get uri connect mongodb at: https://youtu.be/z1f9urHW5xY. I recommend using 'mongodb' or 'sqlite', json is not recommended because it is not stable. (2) when you set autoSyncWhenStart to true, the bot will automatically synchronize the data in the database when starting the bot, this will make the bot start slower. (3) when you set autoRefreshThreadInfoFirstTime to true, the bot will automatically refresh the thread information when get first message from the thread since starting the bot"
+    "autoRefreshThreadInfoFirstTime": true
   },
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": "xassbayjid@gamil.com",
+      "email": "xassbayjid@gmail.com",
       "clientId": "552344212361-ujv8mjve7ue0r20t5caem9a41o8il508.apps.googleusercontent.com",
       "clientSecret": "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",
       "refreshToken": "1//04KHgkn8_-_PfCgYIARAAGAQSNwF-L9Iro-cV9UkOYQjg6noVALzdmrnrL8rijCPS96WGrKoflqLkXr76iZiXezLunTbJAU1AxS4",
@@ -82,20 +69,17 @@ Command executed successfully:
     }
   },
   "autoRestart": {
-    "time": null,
-    "notes": "you can set time is interval with milisecond or cron time, example: 1000, 10000, 60000, 3600000, 86400000, 0 0 * * *,... docs: https://www.npmjs.com/package/node-cron. If you set time is 0 or false or null, the bot will not auto restart"
+    "time": null
   },
   "autoUptime": {
     "enable": true,
     "timeInterval": 180,
-    "url": "",
-    "notes": "the value of timeInterval is seconds, url is the url you want to send the request to (automatically detected for hosting glitch or replit)"
+    "url": ""
   },
   "autoLoadScripts": {
     "enable": true,
     "ignoreCmds": "",
-    "ignoreEvents": "",
-    "notes": "this feature will automatically load the script when scripts have been changed, you can set ignoreCmds to ignore commands, ignoreEvents to ignore events, separate by comma or space, example: \"cmd1.js cmd2.js cmd3.js\" (without backslash)"
+    "ignoreEvents": ""
   },
   "autoRefreshFbstate": true,
   "autoReloginWhenChangeAccount": false,
@@ -104,8 +88,9 @@ Command executed successfully:
     "enable": true,
     "timeRestart": 3600000,
     "delayAfterStopListening": 2000,
-    "logNoti": true,
-    "notes": "the value of timeRestart and delayAfterStopListening is milisecond, You shouldn't edit this if you don't know what it is"
+    "logNoti": true
   },
   "notiWhenListenMqttError": {
-    "notes": "This is the message when the bot is listening to the mqtt server and the
+    "notes": "This is the message when the bot is listening to the mqtt server and errors occur."
+  }
+}
