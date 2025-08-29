@@ -24,7 +24,9 @@
     "61567485701086",
     "61569122561366"
   ],
-  "nisanBot": [],
+  "nisanBot": [
+   ""
+  ],
   "notes": "Set your GROUP ID or Tid ID here if needed, bot will log messages to group",
   "whiteListMode": {
     "enable": false,
