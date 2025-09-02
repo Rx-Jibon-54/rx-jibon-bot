@@ -1,38 +1,56 @@
-/**
- * @author NTKhang
- * ! The source code is written by NTKhang, please don't change the author's name everywhere. Thank you for using
- * ! Official source code: https://github.com/ntkhang03/Goat-Bot-V2
- * ! If you do not download the source code from the above address, you are using an unknown version and at risk of having your account hacked
- *
- * English:
- * ! Please do not change the below code, it is very important for the project.
- * It is my motivation to maintain and develop the project for free.
- * ! If you change it, you will be banned forever
- * Thank you for using
- *
- * Vietnamese:
- * ! Vui lòng không thay đổi mã bên dưới, nó rất quan trọng đối với dự án.
- * Nó là động lực để tôi duy trì và phát triển dự án miễn phí.
- * ! Nếu thay đổi nó, bạn sẽ bị cấm vĩnh viễn
- * Cảm ơn bạn đã sử dụng
- */
+const login = require("ws3-fca");
+require("dotenv").config();
 
-const { spawn } = require("child_process");
-const log = require("./logger/log.js");
+// Load bot config
+const email = process.env.FB_EMAIL;
+const password = process.env.FB_PASSWORD;
 
-function startProject() {
-	const child = spawn("node", ["Goat.js"], {
-		cwd: __dirname,
-		stdio: "inherit",
-		shell: true
-	});
-
-	child.on("close", (code) => {
-		if (code == 2) {
-			log.info("Restarting Project...");
-			startProject();
-		}
-	});
+if (!email || !password) {
+  console.error("❌ Missing FB_EMAIL or FB_PASSWORD in .env file!");
+  process.exit(1);
 }
 
-startProject();
+// Start login
+login({ email, password }, (err, api) => {
+  if (err) {
+    console.error("❌ Login failed:", err.error || err);
+    return;
+  }
+
+  console.log("✅ Boss Bot logged in successfully!");
+
+  // Make sure unexpected errors don’t crash bot
+  process.on("unhandledRejection", (reason, p) => {
+    console.error("⚠️ Unhandled Rejection:", reason);
+  });
+  process.on("uncaughtException", (err) => {
+    console.error("⚠️ Uncaught Exception:", err);
+  });
+
+  // Example: Listen for messages
+  api.listenMqtt(async (err, message) => {
+    if (err) {
+      console.error("❌ Listen error:", err);
+      return;
+    }
+
+    console.log("📩 Message received:", message.body);
+
+    // Simple reply system
+    if (message.body && message.body.toLowerCase() === "hi") {
+      api.sendMessage("Hello Boss! 👋", message.threadID);
+    }
+
+    // Safe getThreadList example
+    try {
+      const threads = await api.getThreadList(5, null, []);
+      if (!threads || !Array.isArray(threads)) {
+        console.warn("⚠️ getThreadList returned invalid data:", threads);
+      } else {
+        console.log("📜 Last 5 threads:", threads.map(t => t.name || t.threadID));
+      }
+    } catch (e) {
+      console.error("❌ Error in getThreadList:", e.message);
+    }
+  });
+});
