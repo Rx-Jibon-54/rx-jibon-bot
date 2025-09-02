@@ -1,59 +1,56 @@
 {
   "facebookAccount": {
-    "email": "",
-    "password": "",
-    "2FASecret": "",
-    "i_user": "",
+    "email": "your-email@example.com",
+    "password": "your-facebook-password",
+    "2FASecret": "your-2fa-secret-if-any",
+    "i_user": "your-i_user-id",
     "proxy": null,
     "userAgent": "Mozilla/5.0 (Linux; Android 12; M2102J20SG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Mobile Safari/537.36",
     "intervalGetNewCookie": 1440,
-    "notes": "To use auto cookie refresh, enter account email and password. If left blank, set intervalGetNewCookie to null."
+    "notes": "সিস্টেম প্রতি ১ দিনে একবার স্বয়ংক্রিয়ভাবে নতুন কুকি সংগ্রহ করবে (email/password দিয়ে)। যদি আপনি null দেন, তাহলে এটা বন্ধ থাকবে।"
   },
   "antiInbox": false,
   "language": "en",
   "notesLanguage": "en",
-  "nickNameBot": "[ ∞ ]ELITE★ÃBBÜ★ŠÃKĪL",
-  "prefix": "∞",
+  "nickNameBot": "─⎝Ꮇ🅔Ꭱ🅡🅨⎞▁▁▁🦋😘🩵🪽󱢏",
+  "prefix": "-",
+  "api": "https://noobs-api.rf.gd/dipto",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
   },
   "adminBot": [
-    "61550859054100",
-    "61576595469696",
-    "61567485701086",
+    "100073111727836",
     "61569122561366"
   ],
-  "nisanBot": [
-   ""
-  ],
-  "notes": "Set your GROUP ID or Tid ID here if needed, bot will log messages to group",
   "whiteListMode": {
     "enable": false,
-    "whiteListIds": []
+    "whiteListIds": [],
+    "notes": "যদি এটি চালু করেন, শুধুমাত্র whiteListIds এর আইডি গুলো বট ব্যবহার করতে পারবে।"
   },
   "whiteListModeThread": {
     "enable": false,
-    "whiteListThreadIds": []
+    "whiteListThreadIds": [],
+    "notes": "সিস্টেম দুটি চেক করবে: ইউজার আইডি এবং থ্রেড আইডি; যেকোনো একটি মিলে গেলে বট ব্যবহার করা যাবে।"
   },
   "database": {
     "type": "mongodb",
-    "uriMongodb": "mongodb+srv://bossbayjid14:sEo1K5APEmI3h9ke@cluster0.vombiex.mongodb.net/jibonBot?retryWrites=true&w=majority&appName=Cluster0",
-    "autoSyncWhenStart": true,
-    "autoRefreshThreadInfoFirstTime": true
+    "uriMongodb": "mongodb+srv://username:password@yourcluster.mongodb.net/dbname?retryWrites=true&w=majority",
+    "autoSyncWhenStart": false,
+    "autoRefreshThreadInfoFirstTime": true,
+    "notes": "MongoDB URI অবশ্যই সঠিকভাবে বসাতে হবে।"
   },
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": "xassbayjid@gmail.com",
-      "clientId": "552344212361-ujv8mjve7ue0r20t5caem9a41o8il508.apps.googleusercontent.com",
-      "clientSecret": "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",
-      "refreshToken": "1//04KHgkn8_-_PfCgYIARAAGAQSNwF-L9Iro-cV9UkOYQjg6noVALzdmrnrL8rijCPS96WGrKoflqLkXr76iZiXezLunTbJAU1AxS4",
-      "apiKey": ""
+      "email": "your-gmail@gmail.com",
+      "clientId": "your-client-id",
+      "clientSecret": "your-client-secret",
+      "refreshToken": "your-refresh-token"
     },
     "gRecaptcha": {
-      "siteKey": "6LcjUNYnAAAAACJRnuYb4PH2C1ZlesOimLIcziSd",
-      "secretKey": "6LcjUNYnAAAAAMWhPUFOdbhYbmeHtYoWzrH4YUDQ"
+      "siteKey": "",
+      "secretKey": ""
     }
   },
   "dashBoard": {
@@ -62,7 +59,7 @@
     "port": 3001
   },
   "serverUptime": {
-    "enable": true,
+    "enable": false,
     "port": 3001,
     "socket": {
       "enable": true,
@@ -71,17 +68,20 @@
     }
   },
   "autoRestart": {
-    "time": null
+    "time": null,
+    "notes": "null দিলে বট স্বয়ংক্রিয়ভাবে restart হবে না।"
   },
   "autoUptime": {
-    "enable": true,
+    "enable": false,
     "timeInterval": 180,
-    "url": ""
+    "url": "",
+    "notes": "Replit/Glitch এর জন্য auto ping system।"
   },
   "autoLoadScripts": {
     "enable": true,
     "ignoreCmds": "",
-    "ignoreEvents": ""
+    "ignoreEvents": "",
+    "notes": "Script ফাইল পরিবর্তন হলে স্বয়ংক্রিয়ভাবে রিলোড হবে।"
   },
   "autoRefreshFbstate": true,
   "autoReloginWhenChangeAccount": false,
@@ -93,6 +93,49 @@
     "logNoti": true
   },
   "notiWhenListenMqttError": {
-    "notes": "This is the message when the bot is listening to the mqtt server and errors occur."
+    "gmail": {
+      "enable": false,
+      "emailGetNoti": ""
+    },
+    "telegram": {
+      "enable": false,
+      "botToken": "",
+      "chatId": ""
+    },
+    "discordHook": {
+      "enable": false,
+      "webhookUrl": ""
+    }
+  },
+  "hideNotiMessage": {
+    "commandNotFound": false,
+    "adminOnly": false,
+    "threadBanned": false,
+    "userBanned": false,
+    "needRoleToUseCmd": false,
+    "needRoleToUseCmdOnReply": false,
+    "needRoleToUseCmdOnReaction": false
+  },
+  "logEvents": {
+    "disableAll": false,
+    "message": true,
+    "message_reaction": true,
+    "message_unsend": true,
+    "message_reply": true,
+    "event": true,
+    "read_receipt": false,
+    "typ": false,
+    "presence": false
+  },
+  "optionsFca": {
+    "forceLogin": true,
+    "listenEvents": true,
+    "updatePresence": true,
+    "listenTyping": true,
+    "logLevel": "error",
+    "selfListen": false,
+    "selfListenEvent": true,
+    "autoMarkDelivery": false,
+    "autoReconnect": false
   }
 }
